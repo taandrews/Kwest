@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { ClipReveal } from "@/components/ui/ClipReveal";
 
@@ -26,12 +27,19 @@ export function About() {
           <div className="relative lg:col-span-2">
             <ClipReveal type="diagonal" delay={0.1}>
               <div
-                className="aspect-[3/4] bg-steel"
+                className="relative aspect-[3/4] overflow-hidden bg-steel"
                 style={{
                   clipPath: "polygon(0 0, 100% 0, 100% 94%, 0 100%)",
                 }}
               >
-                {/* TODO: Replace with <Image> using Kwest's actual photo. File: /public/images/kwest-portrait.jpg */}
+                <Image
+                  src="/images/kwest-portrait.jpg"
+                  alt="Kwest The Barber"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  priority
+                />
               </div>
             </ClipReveal>
 
