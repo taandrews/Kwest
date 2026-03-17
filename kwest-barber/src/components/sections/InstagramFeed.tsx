@@ -18,7 +18,7 @@ export async function InstagramFeed() {
             </h2>
           </div>
           <a
-            href="https://instagram.com/kwestthebarber"
+            href="https://www.instagram.com/kwest_the_barber/"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 font-display text-sm font-semibold uppercase tracking-widest text-smoke transition-colors hover:text-gold"

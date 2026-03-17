@@ -64,7 +64,7 @@ export function Booking() {
             <p className="mt-3 font-body text-xs text-ash">
               DM on{" "}
               <a
-                href="https://instagram.com/kwestthebarber"
+                href="https://www.instagram.com/kwest_the_barber/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gold transition-colors hover:text-gold-light"

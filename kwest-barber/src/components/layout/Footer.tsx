@@ -81,7 +81,7 @@ export function Footer() {
           </p>
           <div className="flex gap-6">
             <a
-              href="https://instagram.com/kwestthebarber"
+              href="https://www.instagram.com/kwest_the_barber/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-mono text-[10px] uppercase tracking-widest text-ash transition-colors hover:text-gold"
