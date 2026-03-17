@@ -1,34 +1,39 @@
 export function Booking() {
   return (
-    <section id="booking" className="bg-ink px-6 py-24">
-      <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
-        {/* Left: CTA */}
-        <div className="flex flex-col justify-center">
-          <h2 className="font-display text-5xl font-black uppercase tracking-tightest text-bone md:text-7xl">
-            BOOK YOUR CUT.
-          </h2>
-          <p className="mt-6 max-w-md font-body text-sm leading-relaxed text-ash">
-            Appointments are handled through Squire. Pick your service, choose
-            your time, and lock in your spot. The chair stays booked, so
-            planning ahead is the move.
-          </p>
-          <a
-            href={process.env.NEXT_PUBLIC_SQUIRE_BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gold-gradient mt-8 inline-block w-fit font-display text-lg font-bold uppercase tracking-widest text-ink px-10 py-4 transition-all hover:opacity-90"
-          >
-            Book on Squire
-          </a>
-        </div>
+    <section id="booking" className="bg-ink px-6 py-24 md:py-32">
+      <div className="mx-auto max-w-5xl text-center">
+        <span className="font-mono text-[10px] uppercase tracking-ultra text-smoke">
+          Ready?
+        </span>
 
-        {/* Right: Info grid */}
-        <div className="grid grid-cols-2 gap-[1px] bg-chrome">
-          <div className="bg-blade p-6">
+        <h2 className="mt-6 font-display text-5xl font-extrabold uppercase text-bone leading-[0.9] md:text-7xl lg:text-8xl">
+          BOOK YOUR
+          <br />
+          <span className="text-gold">CUT.</span>
+        </h2>
+
+        <p className="mx-auto mt-8 max-w-md font-body text-sm leading-relaxed text-ash">
+          Appointments are handled through Squire. Pick your service, choose
+          your time, and lock in your spot. The chair stays booked, so planning
+          ahead is the move.
+        </p>
+
+        <a
+          href={process.env.NEXT_PUBLIC_SQUIRE_BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-10 inline-block bg-gold font-display text-base font-bold uppercase tracking-widest text-ink px-12 py-5 transition-all hover:bg-gold-light"
+        >
+          Book on Squire
+        </a>
+
+        {/* Info strip */}
+        <div className="mt-20 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-chrome pt-10 text-left md:grid-cols-4">
+          <div>
             <span className="font-mono text-[9px] uppercase tracking-ultra text-smoke">
               Hours
             </span>
-            <div className="mt-3 flex flex-col gap-1.5 font-body text-xs text-ash">
+            <div className="mt-2 flex flex-col gap-1 font-body text-xs text-ash">
               <p>Tue - Fri: 10am - 7pm</p>
               <p>Saturday: 9am - 5pm</p>
               <p>Sunday: 11am - 4pm</p>
@@ -36,32 +41,33 @@ export function Booking() {
             </div>
           </div>
 
-          <div className="bg-blade p-6">
+          <div>
             <span className="font-mono text-[9px] uppercase tracking-ultra text-smoke">
               Location
             </span>
-            <p className="mt-3 font-display text-sm font-semibold uppercase tracking-widest text-bone">
+            <p className="mt-2 font-display text-sm font-semibold uppercase text-bone">
               Boca Raton, FL
             </p>
             <p className="mt-1 font-body text-xs text-ash">
-              Address provided upon booking
+              Address upon booking
             </p>
           </div>
 
-          <div className="bg-blade p-6">
+          <div>
             <span className="font-mono text-[9px] uppercase tracking-ultra text-smoke">
               Walk-Ins
             </span>
-            <p className="mt-3 font-body text-xs leading-relaxed text-ash">
-              Available when the chair is open. Book ahead to lock in your spot.
+            <p className="mt-2 font-body text-xs leading-relaxed text-ash">
+              Available when the chair is open. Book ahead to guarantee your
+              spot.
             </p>
           </div>
 
-          <div className="bg-blade p-6">
+          <div>
             <span className="font-mono text-[9px] uppercase tracking-ultra text-smoke">
               Contact
             </span>
-            <p className="mt-3 font-body text-xs text-ash">
+            <p className="mt-2 font-body text-xs text-ash">
               DM on{" "}
               <a
                 href="https://www.instagram.com/kwest_the_barber/"
@@ -69,7 +75,7 @@ export function Booking() {
                 rel="noopener noreferrer"
                 className="text-gold transition-colors hover:text-gold-light"
               >
-                @kwestthebarber
+                @kwest_the_barber
               </a>
             </p>
             <p className="mt-1 font-body text-xs text-ash">

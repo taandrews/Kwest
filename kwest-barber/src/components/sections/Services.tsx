@@ -50,53 +50,76 @@ const services = [
 ];
 
 export function Services() {
+  const featured = services.find((s) => s.featured);
+  const regular = services.filter((s) => !s.featured);
+
   return (
-    <section id="services" className="bg-ink px-6 py-24">
+    <section id="services" className="bg-ink px-6 py-24 md:py-32">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <div className="mb-16 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-          <h2 className="font-display text-5xl font-black uppercase tracking-tightest text-bone md:text-7xl">
-            THE SERVICES
-          </h2>
-          <p className="max-w-sm font-body text-sm text-ash md:text-right">
-            Every service starts with a consultation and ends with you looking
-            exactly how you should.
-          </p>
+        <div className="mb-16">
+          <span className="font-mono text-[10px] uppercase tracking-ultra text-smoke">
+            What We Do
+          </span>
+          <div className="mt-4 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <h2 className="font-display text-4xl font-extrabold uppercase tracking-tightest text-bone md:text-6xl">
+              THE SERVICES
+            </h2>
+            <p className="max-w-sm font-body text-sm text-ash md:text-right">
+              Every service starts with a consultation and ends with you looking
+              exactly how you should.
+            </p>
+          </div>
         </div>
 
-        {/* Grid */}
-        <div className="grid gap-[1px] bg-chrome md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, i) => (
+        {/* Signature service callout */}
+        {featured && (
+          <div className="mb-16 border border-gold/25 bg-gold/[0.04] p-8 md:p-12">
+            <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+              <div>
+                <span className="font-mono text-[9px] uppercase tracking-ultra text-gold">
+                  Signature Service
+                </span>
+                <h3 className="mt-3 font-display text-3xl font-extrabold uppercase text-bone md:text-4xl">
+                  {featured.name}
+                </h3>
+                <p className="mt-4 max-w-lg font-body text-sm leading-relaxed text-ash">
+                  {featured.description}
+                </p>
+              </div>
+              <div className="flex items-end gap-4 md:flex-col md:items-end">
+                <span className="font-display text-4xl font-extrabold text-gold md:text-5xl">
+                  {featured.price}
+                </span>
+                <span className="font-mono text-[10px] uppercase tracking-widest text-smoke">
+                  {featured.duration}
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Service list */}
+        <div className="border-t border-chrome/60">
+          {regular.map((service) => (
             <div
               key={service.name}
-              className={`relative flex flex-col justify-between p-8 ${
-                service.featured ? "bg-gold/10" : "bg-blade"
-              }`}
+              className="group flex flex-col justify-between gap-3 border-b border-chrome/60 py-7 transition-colors hover:bg-bone/[0.02] md:flex-row md:items-center"
             >
-              {service.featured && (
-                <span className="absolute top-4 right-4 font-mono text-[9px] uppercase tracking-ultra text-gold">
-                  Popular
-                </span>
-              )}
-
-              <div>
-                <span className="font-mono text-[10px] text-smoke">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-3 font-display text-2xl font-black uppercase tracking-tight text-bone">
+              <div className="flex-1">
+                <h3 className="font-display text-xl font-bold uppercase text-bone transition-colors group-hover:text-gold md:text-2xl">
                   {service.name}
                 </h3>
-                <p className="mt-3 font-body text-sm leading-relaxed text-ash">
+                <p className="mt-1.5 max-w-lg font-body text-sm text-ash">
                   {service.description}
                 </p>
               </div>
-
-              <div className="mt-8 flex items-end justify-between">
-                <span className="font-display text-3xl font-black text-gold">
-                  {service.price}
-                </span>
+              <div className="flex items-center gap-6 md:gap-8">
                 <span className="font-mono text-[10px] uppercase tracking-widest text-smoke">
                   {service.duration}
+                </span>
+                <span className="font-display text-2xl font-extrabold text-gold">
+                  {service.price}
                 </span>
               </div>
             </div>

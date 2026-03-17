@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Hero() {
   const [count, setCount] = useState(0);
-  const countRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const target = 2400;
@@ -26,118 +25,143 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen flex-col justify-between overflow-hidden bg-ink px-6 pt-32 pb-12">
-      {/* Background effects */}
+    <section className="relative flex min-h-screen flex-col justify-between overflow-hidden bg-ink px-6 pt-28 pb-8 md:px-12 lg:px-16">
+      {/* Background — subtle gold glow */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 70% 40%, rgba(201, 168, 76, 0.08) 0%, transparent 60%)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to top, #0A0A0A 0%, transparent 40%)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute top-0 bottom-0"
-        style={{
-          left: "62%",
-          width: "1px",
-          background:
-            "linear-gradient(to bottom, transparent, rgba(201, 168, 76, 0.15) 30%, rgba(201, 168, 76, 0.15) 70%, transparent)",
-          transform: "skewX(-2deg)",
+            "radial-gradient(ellipse at 60% 45%, rgba(201, 168, 76, 0.06) 0%, transparent 55%)",
         }}
       />
 
-      {/* Counter - top right */}
-      <div
-        className="animate-fade-up relative ml-auto text-right"
-        style={{ animationDelay: "0.1s" }}
-      >
+      {/* Background — oversized watermark */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden select-none">
         <span
-          ref={countRef}
-          className="font-display text-5xl font-black text-bone md:text-7xl"
+          className="font-display font-extrabold uppercase text-bone leading-none"
+          style={{ fontSize: "25vw", opacity: 0.015 }}
         >
-          {count.toLocaleString()}+
+          KWEST
         </span>
-        <p className="mt-1 font-mono text-[10px] uppercase tracking-ultra text-smoke">
-          Clients Served
-        </p>
       </div>
 
-      {/* Main headline */}
-      <div className="relative mt-auto">
-        <h1
-          className="animate-fade-up font-display font-black uppercase leading-[0.85] tracking-tightest"
-          style={{
-            fontSize: "clamp(3.5rem, 12vw, 10rem)",
-            animationDelay: "0.25s",
-          }}
-        >
-          <span className="block text-bone">SHARP</span>
-          <span className="text-gold-gradient block">CLEAN.</span>
-          <span className="block text-bone">PRECISE.</span>
-        </h1>
+      {/* Diagonal accent line */}
+      <div className="pointer-events-none absolute top-0 bottom-0" style={{
+        left: "58%",
+        width: "1px",
+        background: "linear-gradient(to bottom, transparent 10%, rgba(201, 168, 76, 0.12) 35%, rgba(201, 168, 76, 0.12) 65%, transparent 90%)",
+        transform: "skewX(-3deg)",
+      }} />
 
-        {/* CTAs */}
-        <div
-          className="animate-fade-up mt-8 flex items-center gap-6"
-          style={{ animationDelay: "0.5s" }}
+      {/* Top bar */}
+      <div
+        className="animate-fade-up relative flex items-start justify-between"
+        style={{ animationDelay: "0.1s" }}
+      >
+        <span className="font-mono text-[10px] uppercase tracking-ultra text-smoke">
+          Est. Boca Raton, FL
+        </span>
+        <div className="text-right">
+          <span className="font-display text-4xl font-extrabold text-bone md:text-5xl">
+            {count.toLocaleString()}+
+          </span>
+          <p className="mt-1 font-mono text-[9px] uppercase tracking-ultra text-smoke">
+            Cuts &amp; Counting
+          </p>
+        </div>
+      </div>
+
+      {/* Main headline — staircase cascade */}
+      <div className="relative mt-auto mb-10">
+        <h1
+          className="font-display font-extrabold uppercase leading-[0.9] tracking-tightest"
+          style={{ fontSize: "clamp(3rem, 11vw, 9rem)" }}
         >
+          <span
+            className="animate-fade-up block text-bone"
+            style={{ animationDelay: "0.2s" }}
+          >
+            SHARP.
+          </span>
+          <span
+            className="animate-fade-up block text-gold ml-[10vw]"
+            style={{ animationDelay: "0.35s" }}
+          >
+            CLEAN.
+          </span>
+          <span
+            className="animate-fade-up block text-bone ml-[20vw]"
+            style={{ animationDelay: "0.5s" }}
+          >
+            PRECISE.
+          </span>
+        </h1>
+      </div>
+
+      {/* Horizontal rule */}
+      <div
+        className="h-px w-full origin-left animate-line-grow"
+        style={{
+          background:
+            "linear-gradient(90deg, #C9A84C 0%, rgba(201, 168, 76, 0.35) 50%, transparent 100%)",
+          animationDelay: "0.7s",
+        }}
+      />
+
+      {/* Bottom bar — CTA + metrics */}
+      <div
+        className="animate-fade-up mt-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+        style={{ animationDelay: "0.8s" }}
+      >
+        <div className="flex items-center gap-6">
           <a
             href={process.env.NEXT_PUBLIC_SQUIRE_BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gold-gradient font-display text-sm font-bold uppercase tracking-widest text-ink px-7 py-3.5 transition-all hover:opacity-90"
+            className="bg-gold font-display text-sm font-bold uppercase tracking-widest text-ink px-7 py-3.5 transition-all hover:bg-gold-light"
           >
             Book Your Cut
           </a>
           <a
             href="#services"
-            className="group inline-flex items-center gap-2 font-display text-sm font-semibold uppercase tracking-widest text-smoke transition-colors hover:text-bone"
+            className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-smoke transition-colors hover:text-bone"
           >
-            View Services
+            Services
             <span className="inline-block transition-transform group-hover:translate-x-1">
               &rarr;
             </span>
           </a>
         </div>
-      </div>
 
-      {/* Bottom metrics */}
-      <div
-        className="animate-fade-up mt-12 grid grid-cols-3 border-t border-gold/15 pt-6"
-        style={{ animationDelay: "0.7s" }}
-      >
-        {[
-          { value: "10+", label: "Years Sharp" },
-          { value: "12", label: "Services" },
-          { value: "5.0", label: "Star Rating" },
-        ].map((metric) => (
-          <div key={metric.label} className="text-center">
-            <p className="font-display text-2xl font-black text-bone md:text-3xl">
-              {metric.value}
-            </p>
-            <p className="mt-1 font-mono text-[9px] uppercase tracking-ultra text-smoke">
-              {metric.label}
+        <div className="flex gap-10">
+          <div>
+            <span className="font-display text-xl font-extrabold text-bone">
+              10+
+            </span>
+            <p className="font-mono text-[8px] uppercase tracking-ultra text-smoke">
+              Years
             </p>
           </div>
-        ))}
+          <div>
+            <span className="font-display text-xl font-extrabold text-bone">
+              5.0
+            </span>
+            <p className="font-mono text-[8px] uppercase tracking-ultra text-smoke">
+              Rating
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
       <div
-        className="animate-fade-up absolute bottom-8 left-6 flex flex-col items-center gap-3"
-        style={{ animationDelay: "0.9s" }}
+        className="animate-fade-up absolute bottom-6 left-6 hidden flex-col items-center gap-2 lg:flex"
+        style={{ animationDelay: "1s" }}
       >
-        <span className="font-mono text-[9px] uppercase tracking-ultra text-smoke [writing-mode:vertical-lr]">
+        <span className="font-mono text-[8px] uppercase tracking-ultra text-smoke [writing-mode:vertical-lr]">
           Scroll
         </span>
-        <div className="h-12 w-[1px] bg-gradient-to-b from-gold to-transparent" />
+        <div className="h-10 w-px bg-gradient-to-b from-gold to-transparent" />
       </div>
     </section>
   );

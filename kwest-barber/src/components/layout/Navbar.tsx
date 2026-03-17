@@ -25,17 +25,17 @@ export function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-ink/95 backdrop-blur-md border-b border-gold/10 py-3"
-          : "py-6"
+          : "py-5"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
         {/* Wordmark */}
         <a href="#" className="flex flex-col leading-none">
-          <span className="font-display text-2xl font-black uppercase tracking-tight text-bone">
+          <span className="font-display text-xl font-extrabold uppercase text-bone">
             KWEST
           </span>
-          <span className="font-display text-[0.6rem] font-semibold uppercase tracking-ultra text-gold">
-            THE BARBER
+          <span className="font-mono text-[8px] uppercase tracking-ultra text-gold">
+            The Barber
           </span>
         </a>
 
@@ -45,7 +45,7 @@ export function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="font-display text-sm font-semibold uppercase tracking-widest text-smoke transition-colors hover:text-bone"
+              className="font-mono text-xs uppercase tracking-widest text-smoke transition-colors hover:text-bone"
             >
               {link.label}
             </a>
@@ -54,7 +54,7 @@ export function Navbar() {
             href={process.env.NEXT_PUBLIC_SQUIRE_BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gold-gradient font-display text-sm font-bold uppercase tracking-widest text-ink px-5 py-2.5 transition-all hover:opacity-90"
+            className="bg-gold font-display text-xs font-bold uppercase tracking-widest text-ink px-5 py-2.5 transition-all hover:bg-gold-light"
           >
             Book Now
           </a>
@@ -67,17 +67,17 @@ export function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-[2px] w-6 bg-bone transition-all duration-300 ${
+            className={`block h-[2px] w-5 bg-bone transition-all duration-300 ${
               menuOpen ? "translate-y-[5px] rotate-45" : ""
             }`}
           />
           <span
-            className={`block h-[2px] w-6 bg-bone transition-all duration-300 ${
+            className={`block h-[2px] w-5 bg-bone transition-all duration-300 ${
               menuOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-[2px] w-6 bg-bone transition-all duration-300 ${
+            className={`block h-[2px] w-5 bg-bone transition-all duration-300 ${
               menuOpen ? "-translate-y-[5px] -rotate-45" : ""
             }`}
           />
@@ -98,7 +98,7 @@ export function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="font-display text-lg font-semibold uppercase tracking-widest text-smoke transition-colors hover:text-bone"
+              className="font-display text-lg font-bold uppercase tracking-widest text-smoke transition-colors hover:text-bone"
             >
               {link.label}
             </a>
@@ -107,7 +107,7 @@ export function Navbar() {
             href={process.env.NEXT_PUBLIC_SQUIRE_BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gold-gradient font-display text-center text-sm font-bold uppercase tracking-widest text-ink px-5 py-3"
+            className="bg-gold font-display text-center text-sm font-bold uppercase tracking-widest text-ink px-5 py-3"
           >
             Book Now
           </a>

@@ -1,26 +1,25 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Barlow, Space_Mono } from "next/font/google";
+import { Syne, Outfit, Azeret_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
-const barlowCondensed = Barlow_Condensed({
+const syne = Syne({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
+  weight: ["400", "600", "700", "800"],
 });
 
-const barlow = Barlow({
+const outfit = Outfit({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600"],
 });
 
-const spaceMono = Space_Mono({
+const azeretMono = Azeret_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -45,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${barlowCondensed.variable} ${barlow.variable} ${spaceMono.variable} antialiased`}
+        className={`${syne.variable} ${outfit.variable} ${azeretMono.variable} antialiased`}
       >
         <Navbar />
         {children}

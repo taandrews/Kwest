@@ -66,14 +66,14 @@ export function InstagramFeedClient({ posts }: Props) {
       <div className="mt-8 flex items-center gap-6">
         <button
           onClick={scrollPrev}
-          className="font-display text-xs font-semibold uppercase tracking-widest text-smoke transition-colors hover:text-gold"
+          className="font-mono text-xs uppercase tracking-widest text-smoke transition-colors hover:text-gold"
         >
           Prev
         </button>
-        <div className="h-[1px] flex-1 bg-chrome" />
+        <div className="h-px flex-1 bg-chrome" />
         <button
           onClick={scrollNext}
-          className="font-display text-xs font-semibold uppercase tracking-widest text-smoke transition-colors hover:text-gold"
+          className="font-mono text-xs uppercase tracking-widest text-smoke transition-colors hover:text-gold"
         >
           Next
         </button>
